@@ -1,0 +1,39 @@
+.container {
+  height: calc(100% - 64px);
+}
+
+.register {
+  width: 360px;
+}
+
+.register-header-logo {
+  width: 96px;
+  height: 96px;
+}
+
+.register-header {
+  padding: 4px;
+  background: #3f51b5;
+}
+
+.register-content {
+  padding: 24px 42px 42px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.extra-options {
+  margin: 16px 0 32px;
+}
+
+.note {
+  color: gray;
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}

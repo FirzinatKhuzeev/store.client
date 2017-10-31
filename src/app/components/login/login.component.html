@@ -1,0 +1,25 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="container">
+  <div class="login mat-elevation-z12">
+    <div fxLayout="column" fxLayoutAlign="center center" class="login-header">
+      <img class="login-header-logo" src="../../../assets/img/logo.svg" alt="">
+    </div>
+    <form [formGroup]="form" (ngSubmit)="login()" fxLayout="column" fxLayoutAlign="start stretch" class="login-content">
+      <mat-form-field floatPlaceholder="auto">
+        <input matInput type="email" [formControl]="email" required placeholder="E-mail">
+      </mat-form-field>
+      <mat-form-field floatPlaceholder="auto">
+        <input matInput type="password" [formControl]="password" required placeholder="Password">
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="extra-options">
+        <mat-checkbox value="" color="primary">Remember Me</mat-checkbox>
+        <a routerLink="/forgot-password">Forgot password?</a>
+      </div>
+      <button [disabled]="!form.valid" mat-raised-button color="primary" type="submit" type="submit">SIGN IN</button>
+      <p class="note">
+        <span>Don't have an account?</span>
+        <br>
+        <a routerLink="/register">Click here to create one</a>
+      </p>
+    </form>
+  </div>
+</div>

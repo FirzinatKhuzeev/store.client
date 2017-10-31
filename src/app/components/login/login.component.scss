@@ -1,0 +1,40 @@
+.container {
+  height: calc(100% - 64px);
+}
+
+.login {
+  width: 360px;
+}
+
+.login-header-logo {
+  width: 96px;
+  height: 96px;
+}
+
+.login-header {
+  padding: 4px;
+  background: #3f51b5;
+}
+
+.login-content {
+  padding: 24px 42px 42px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin: 6px 0 18px;
+}
+
+.extra-options {
+  margin: 16px 0 32px;
+}
+
+.note {
+  color: gray;
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}

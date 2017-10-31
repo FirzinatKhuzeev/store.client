@@ -1,0 +1,41 @@
+<div class="container mat-elevation-z8">
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="header">
+    <span fxFlex="auto" class="title">Products</span>
+    <mat-form-field fxFlex="20" class="search">
+      <input matInput #filter placeholder="Filter products">
+    </mat-form-field>
+  </div>
+  <mat-table #table matSort [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+      <mat-header-cell mat-sort-header *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row" > {{row.name}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <mat-header-cell mat-sort-header *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="unitprice">
+      <mat-header-cell mat-sort-header *matHeaderCellDef> Unit Price </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.unitPrice}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="brand">
+      <mat-header-cell mat-sort-header *matHeaderCellDef> Brand </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.brand}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="category">
+      <mat-header-cell mat-sort-header *matHeaderCellDef> Category </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.category}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/product', row.id]"></mat-row>
+  </mat-table>
+  <mat-paginator #paginator [length]="productCount" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+  </mat-paginator>
+  <div>
+    <span class="create">
+      <button mat-fab (click)="create()">
+        <mat-icon>add circle</mat-icon>
+      </button>
+    </span>
+  </div>
+</div>

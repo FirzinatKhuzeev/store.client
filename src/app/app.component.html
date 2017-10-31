@@ -1,0 +1,32 @@
+<mat-sidenav-container class="container" fullscreen>
+  <mat-toolbar color="primary">
+    <!-- header -->
+    <a mat-button routerLink="/home">
+      <mat-icon>store</mat-icon>
+      <span>Store</span>
+    </a>
+    <span class="fill-remaining-space"></span>
+    <nav>
+      <a mat-button *ngFor="let router of getNavItems()" [routerLink]="router.path">
+        <mat-icon>
+          {{router.icon}}
+        </mat-icon>
+        <span>{{router.title}}</span>
+      </a>
+
+      <button mat-icon-button [mat-menu-trigger-for]="userMenu" class="user-button">
+        <mat-icon>account_box</mat-icon>
+      </button>
+
+      <mat-menu #userMenu class="user-menu">
+        <button mat-menu-item *ngFor="let menu of getMenuItems()" [routerLink]="menu.path">
+          <mat-icon>{{menu.icon}}</mat-icon>
+          <span>{{menu.title}}</span>
+        </button>
+      </mat-menu>
+    </nav>
+  </mat-toolbar>
+
+  <!-- primary content -->
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
