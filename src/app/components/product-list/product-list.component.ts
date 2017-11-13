@@ -2,7 +2,7 @@ import { APP_ROUTE_PRODUCT } from './../../helpers/constants';
 import { NotificationService } from './../../services/notification.service';
 import { Router } from '@angular/router';
 import { ProductService } from './../../services/product.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
 import { Product } from './../../models/product';
 import { ProductDataSource } from '../../helpers/product.helper';
 import {
@@ -18,10 +18,9 @@ import {
 import { DataSource } from '@angular/cdk/collections';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { MatPaginator, MatSort } from '@angular/material';
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
+import { merge } from 'rxjs/observable/merge';
+import { fromEvent } from 'rxjs/observable/fromEvent';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { KEY_UP, FILTER, DISPLAYED_COLUMNS } from '../../helpers/constants';
 
 @Component({

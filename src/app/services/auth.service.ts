@@ -2,7 +2,7 @@ import { NotificationService } from './notification.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 import {
   HttpSentEvent,
   HttpClient,
